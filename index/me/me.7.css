@@ -1,13 +1,15 @@
 .popup-footer {
   display: flex;
+  flex-direction: column; /* Set flex-direction to column */
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Center vertically */
   padding: 10px;
 }
 
 .left-footer {
   display: flex;
   align-items: center;
+  margin-bottom: 10px; /* Add margin-bottom to create space between checkbox and page index */
 }
 
 .center-footer {
@@ -15,11 +17,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center; /* Add text-align center */
+  text-align: center;
 }
 
 .page-index {
   font-size: 14px;
   font-weight: bold;
-  white-space: nowrap; /* Prevent line break */
+  white-space: nowrap;
 }
