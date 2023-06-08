@@ -133,3 +133,25 @@ To apply the CSS styles from `style.css` to the extracted sections, you have a f
 3. Dynamic Style Tag: Another approach is to dynamically create a `<style>` tag in your Angular component and set its content to the CSS rules from `style.css`. Then, append the `<style>` tag to the Angular component's template or the document's `<head>` section. This will allow the extracted sections to inherit the styles defined in `style.css`.
 
 Each approach has its own trade-offs, and the choice depends on your specific requirements and preferences. Consider the complexity of the CSS styles, the scalability of your application, and the separation of concerns when deciding which approach to use.
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-my-popup',
+  templateUrl: './my-popup.component.html',
+  styleUrls: ['./my-popup.component.css']
+})
+export class MyPopupComponent {
+  dialogVisible = false;
+  popupTitle = 'Popup Title';
+  checkBoxValue = false;
+  pageIndex = 1;
+
+  closeDialog() {
+    this.dialogVisible = false;
+  }
+
+  navigate(direction: 'left' | 'right') {
+    // Handle navigation logic
+  }
+}
