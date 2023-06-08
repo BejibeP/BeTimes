@@ -52,3 +52,43 @@
     </div>
   </ng-template>
 </p-dialog>
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Set the desired height for the container */
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
+.left-element {
+  margin-right: auto;
+}
+
+.center-element {
+  margin: 0 auto;
+}
+
+<div class="container">
+  <div class="top-row">
+    <!-- Element for the first row -->
+    <div class="left-element">First Row, Left Element</div>
+  </div>
+  <div class="bottom-row">
+    <!-- Element for the second row -->
+    <div class="center-element">Second Row, Center Element</div>
+  </div>
+</div>
+
