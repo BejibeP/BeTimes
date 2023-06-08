@@ -1,0 +1,25 @@
+.popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.left-footer {
+  display: flex;
+  align-items: center;
+}
+
+.center-footer {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Add text-align center */
+}
+
+.page-index {
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap; /* Prevent line break */
+}
