@@ -1,94 +1,42 @@
-.popup-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
+Certainly! I can help you with dynamically inserting HTML content into an Angular component based on a file. To achieve this, you can make use of the `innerHTML` property in the Angular component template.
+
+Here's a step-by-step guide on how you can accomplish this:
+
+1. First, make sure you have the HTML content you want to insert dynamically. You mentioned that you already have a mechanism to get the HTML, so assume you have the HTML content stored in a variable called `dynamicHtmlContent`.
+
+2. In your Angular component's template file (usually with a `.component.html` extension), locate the element where you want to insert the dynamic HTML. For example, let's say you have a `<div>` element with the id "dynamicContentContainer" where you want to insert the HTML.
+
+```html
+<div id="dynamicContentContainer"></div>
+```
+
+3. In your Angular component's TypeScript file (usually with a `.component.ts` extension), you need to access the element using ViewChild and set the `innerHTML` property to the dynamic HTML content.
+
+```typescript
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+
+@Component({
+  selector: 'app-your-component',
+  templateUrl: 'your-component.component.html',
+  styleUrls: ['your-component.component.css']
+})
+export class YourComponent implements AfterViewInit {
+  @ViewChild('dynamicContentContainer', { static: false }) dynamicContentContainer: ElementRef;
+
+  dynamicHtmlContent: string; // Assume you have the dynamic HTML content
+
+  ngAfterViewInit(): void {
+    this.dynamicContentContainer.nativeElement.innerHTML = this.dynamicHtmlContent;
+  }
 }
+```
 
-.top-line {
-  display: flex;
-  align-items: center;
-}
+In this example, the `@ViewChild` decorator is used to get a reference to the `dynamicContentContainer` element in the template. The `ngAfterViewInit` lifecycle hook is used to ensure that the component's view has been initialized before accessing the element.
 
-.bottom-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+4. With these changes in place, when the component is rendered, the dynamic HTML content will be inserted into the specified `<div>` element. Make sure to bind the `dynamicHtmlContent` variable to the actual HTML content you want to load dynamically.
 
-.page-index {
-  font-size: 14px;
-  font-weight: bold;
-  white-space: nowrap;
-}
+That's it! You have now successfully inserted dynamic HTML content into an Angular component based on a file.
 
-<p-dialog [(visible)]="dialogVisible" [modal]="true" [responsive]="true" [contentStyle]="{width: '80vw', height: '80vh'}">
-  <ng-template pTemplate="header">
-    <div class="popup-header">
-      <h2>{{ popupTitle }}</h2>
-      <button class="close-button" pButton icon="pi pi-times" (click)="closeDialog()"></button>
-    </div>
-  </ng-template>
+Note: When dynamically inserting HTML content, make sure the content is safe and doesn't contain any malicious scripts that could potentially harm your application or users. Proper security measures should be implemented to sanitize or validate the content before inserting it into the component.
 
-  <ng-template pTemplate="content">
-    <div class="popup-content">
-      <button class="navigate-button" pButton icon="pi pi-chevron-left" (click)="navigate('left')"></button>
-      <div class="center-content">
-        <!-- Your main content goes here -->
-      </div>
-      <button class="navigate-button" pButton icon="pi pi-chevron-right" (click)="navigate('right')"></button>
-    </div>
-  </ng-template>
-
-  <ng-template pTemplate="footer">
-    <div class="popup-footer">
-      <div class="top-line">
-        <p-checkbox [(ngModel)]="checkBoxValue"></p-checkbox>
-      </div>
-      <div class="bottom-line">
-        <span class="page-index">{{ pageIndex }}</span>
-      </div>
-    </div>
-  </ng-template>
-</p-dialog>
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 200px; /* Set the desired height for the container */
-  border: 1px solid #000;
-  padding: 10px;
-}
-
-.top-row {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.bottom-row {
-  display: flex;
-  justify-content: center;
-}
-
-.left-element {
-  margin-right: auto;
-}
-
-.center-element {
-  margin: 0 auto;
-}
-
-<div class="container">
-  <div class="top-row">
-    <!-- Element for the first row -->
-    <div class="left-element">First Row, Left Element</div>
-  </div>
-  <div class="bottom-row">
-    <!-- Element for the second row -->
-    <div class="center-element">Second Row, Center Element</div>
-  </div>
-</div>
-
+I hope this helps! Let me know if you have any further questions.
