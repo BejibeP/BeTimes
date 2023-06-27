@@ -1,0 +1,70 @@
+/* Extra small devices (portrait phones) */
+@media screen and (max-width: 576px) {
+    /* Styles for extra small devices */
+}
+
+/* Small devices (landscape phones) */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    /* Styles for small devices */
+}
+
+/* Medium devices (tablets) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Styles for medium devices */
+}
+
+/* Large devices (desktops) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    /* Styles for large devices */
+}
+
+/* Extra large devices (large desktops) */
+@media screen and (min-width: 1200px) {
+    /* Styles for extra large devices */
+}
+
+Certainly! Here are a few commonly used media queries that cover a range of resolutions and devices:
+
+1. Small screens (mobile devices):
+```css
+@media screen and (max-width: 767px) {
+    /* Styles for small screens (up to 767px) */
+}
+```
+
+2. Medium-sized screens (tablets):
+```css
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Styles for medium-sized screens (768px to 1023px) */
+}
+```
+
+3. Large screens (desktops and laptops):
+```css
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    /* Styles for large screens (1024px to 1279px) */
+}
+```
+
+4. Extra-large screens (larger desktops and high-resolution displays):
+```css
+@media screen and (min-width: 1280px) {
+    /* Styles for extra-large screens (1280px and above) */
+}
+```
+
+5. Landscape orientation (commonly used for tablets and mobile devices):
+```css
+@media screen and (orientation: landscape) {
+    /* Styles for landscape orientation */
+}
+```
+
+6. Portrait orientation (commonly used for tablets and mobile devices):
+```css
+@media screen and (orientation: portrait) {
+    /* Styles for portrait orientation */
+}
+```
+
+These media queries cover a broad range of resolutions and orientations commonly found across different devices. You can modify or combine them as needed to target specific breakpoints or adjust styles for different screen sizes.
